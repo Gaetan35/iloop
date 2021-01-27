@@ -4,7 +4,7 @@
     "slug": "Iloop",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo_carre.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,9 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo_carre.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.iloop.testv1alpha"
     },
     "web": {
       "favicon": "./assets/favicon.png"

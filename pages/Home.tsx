@@ -1,8 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Button from '../components/Button';
+import Button from '../components/common/Button';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+    const navigation = useNavigation();
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
@@ -11,19 +14,23 @@ const Home = () => {
             </View>
             <View style={styles.centered}>
                 <Button
-                    label={'Scanner un produit code barre ou QR code'}
+                    label={'SCANNER UN PRODUIT'}
+                    subtitle={'Code barre ou QR code'}
                     onPress={() => {
-                        console.log('bouton appuyé');
+                        navigation.navigate('ScanProduct');
                     }}
-                    containerStyle={{ backgroundColor: 'blue', padding: 5 }}
+                    containerStyle={styles.buttonContainer}
+                    textStyle={styles.buttonText}
+                    subtitleStyle={{ fontSize: 10, color: 'white', textAlign: 'center' }}
                 />
 
                 <Button
-                    label={'Rechercher un produit'}
+                    label={'RECHERCHER UN PRODUIT'}
                     onPress={() => {
-                        console.log('bouton 2 appuyé');
+                        navigation.navigate('SearchProduct');
                     }}
-                    containerStyle={{ backgroundColor: 'blue', marginTop: 10, padding: 5 }}
+                    containerStyle={[styles.buttonContainer, { marginTop: 10 }]}
+                    textStyle={styles.buttonText}
                 />
             </View>
         </SafeAreaView>
@@ -57,8 +64,15 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 20,
     },
-    button: {
-        marginTop: 10,
+    buttonContainer: {
+        backgroundColor: '#0d47a1',
+        padding: 15,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: 'white',
     },
 });
 

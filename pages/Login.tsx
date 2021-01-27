@@ -6,9 +6,7 @@ const Login = () => {
     const logo = require('../images/logo.png');
     const navigation = useNavigation();
     useEffect(() => {
-        console.log('Début du timeout');
         setTimeout(() => {
-            console.log('Fin du chrono');
             navigation.navigate('MainApp', { screen: 'Home' });
         }, 4000);
     }, []);
